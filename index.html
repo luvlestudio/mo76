@@ -12,10 +12,10 @@
   <!-- 검색 엔진 색인화 방지 -->
   <meta name="robots" content="noindex, nofollow" />
   <meta name="googlebot" content="noindex, nofollow" />
-  
+
   <!-- 페이지 캐싱 및 아카이빙 방지 -->
   <meta name="robots" content="noarchive, nosnippet" />
-  
+
   <!-- 이미지 색인화 방지 -->
   <meta name="robots" content="noimageindex" />
   <meta name="description" content="2025년 6월 7일 토요일♡" />
@@ -590,6 +590,36 @@
                 <img src="img/kakaotalk.png" alt="카카오톡" style="width: 25px; height: 25px" />
                 &nbsp;&nbsp;카카오톡
               </button>
+              <script>
+                const btnShareKa = document.querySelector('.shareKt');
+                btnShareKa.addEventListener('click', () => {
+                  Kakao.Share.sendDefault({
+                    objectType: 'feed',
+                    content: {
+                      title: '현중 ♥ 보림의 모바일 청첩장',
+                      description: '2025년 6월 7일 토요일♡',
+                      imageUrl: 'https://i.imgur.com/VYq2S0i.png',
+                      imageWidth: 1200,
+                      imageHeight: 630,
+                      link: {
+                        mobileWebUrl: 'https://mo76.luvle.kr',
+                        webUrl: 'https://mo76.luvle.kr',
+                      },
+                    },
+                    buttons: [
+                      {
+                        title: '자세히 보기',
+                        link: {
+                          mobileWebUrl: 'https://mo76.luvle.kr',
+                          webUrl: 'https://mo76.luvle.kr',
+                        },
+                      },
+                    ],
+                    // 카카오톡 미설치 시 카카오톡 설치 경로이동
+                    installTalk: true,
+                  });
+                });
+              </script>
               <!-- <button id="snsButton" type="button" class="shareKs">
                   <img
                     src="img/kakaostory.png"
@@ -610,6 +640,14 @@
                 <img src="img/smstalk.png" alt="문자전송" style="width: 25px; height: 25px" />
                 &nbsp;&nbsp;2G 휴대폰 전송
               </button>
+              <script>
+                const shareViaSMSBtn = document.querySelector('.shareTwoG');
+                shareViaSMSBtn.addEventListener('click', () => {
+                  const message = '모바일 청첩장을 확인해주세요! ' + window.location.href;
+                  const link = 'sms:?body=' + encodeURIComponent(message);
+                  window.location.href = link;
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -651,7 +689,7 @@
       <div class="swiper-slide">
         <img src="img/wedding/6.png" title="TITLE 6" />
       </div> -->
-      <!-- <div class="swiper-slide">
+  <!-- <div class="swiper-slide">
         <img src="img/wedding/7.png" title="TITLE 7" />
       </div>
       <div class="swiper-slide">
@@ -675,15 +713,15 @@
       <div class="swiper-slide">
         <img src="img/wedding/14.png" title="TITLE 14" />
       </div> -->
-      <!-- <div class="swiper-slide">
+  <!-- <div class="swiper-slide">
         <img src="img/wedding/15.png" title="TITLE 15" />
       </div>
       <div class="swiper-slide">
         <img src="img/wedding/16.png" title="TITLE 16" />
     </div> -->
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
   </div>
 </body>
 
